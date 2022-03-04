@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CookieMonsterAssistant.Ingrediens
 {
-    internal class Ingre
+    public class Ingre
     {
 
         public int Amount { get; set; }
@@ -14,6 +14,23 @@ namespace CookieMonsterAssistant.Ingrediens
         public string Ingredient { get; set; }
         public string Description { get; set; }
 
+        internal static Ingre ParseRow(string row)
+        {
+            
+            
+            
+                var columns = row.Split(',');
+                return new Ingre()
+                {
+                    Amount = int.Parse(columns[0]),
+                    Measure = int.Parse(columns[1]),
+                    Ingredient = (columns[2]),
+                    Description = columns[3],
 
+                };
+
+            
+            
+        }
     }
 }
