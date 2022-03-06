@@ -39,17 +39,31 @@ namespace CookieMonsterAssistant.Recipe
 
             }
 
+            Console.Clear();
 
             foreach (var Ingre in Recipe)
             {
-                if (Ingre.Amount > 0)
+                if (Ingre.Amount > 0 && Ingre.Amount < 420)
                 {
 
 
                     Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
                 }
             }
-        
+
+            foreach (var Ingre in Recipe)
+            {
+                if (Ingre.Amount >= 420)
+                {
+                    Console.WriteLine(Ingre.Description);
+
+                }
+  
+                    
+                
+            }
+            Console.WriteLine("This recpie is for " + HowMany * 2 + " people.");
+            Console.ReadKey();
 
         }
 

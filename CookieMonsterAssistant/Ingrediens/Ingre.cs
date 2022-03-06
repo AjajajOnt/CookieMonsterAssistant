@@ -83,7 +83,13 @@ namespace CookieMonsterAssistant.Ingrediens
                     Directions = true;
                     Ingridients = false;
                     End = false;
-                
+                return new Ingre()
+                {
+                    Description = row,
+                    Amount = 420
+                    
+
+                };
 
             }
             return new Ingre();
