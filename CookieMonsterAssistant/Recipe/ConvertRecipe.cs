@@ -17,7 +17,7 @@ namespace CookieMonsterAssistant.Recipe
             List<Ingre> ReadCSV(string path)
             {
 
-                return File.ReadAllLines(path).Skip(1).ToList()
+                return File.ReadAllLines(path)
                 .Where(row => row.Length > 0)
                 .Select(Ingre.ParseRow).ToList();
             }
@@ -26,13 +26,22 @@ namespace CookieMonsterAssistant.Recipe
                 Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
             }
         }
-        private void addingre()
+        internal void RecipeConversionV()
         {
-            List<Ingre> ingre = new List<Ingre>();
+            string Path = @"C:\Users\DarkArt\Desktop\Recipe.csv";
+            var Recipe = ReadCSV(Path);
+            List<Ingre> ReadCSV(string path)
             {
-                new Ingre() { Description = "asd", Amount = "asd", Ingredient = "asd", Measure = "asd" };
-              
-            };                       
+
+                return File.ReadAllLines(path)
+                .Where(row => row.Length > 0)
+                .Select(Ingre.ParseRow).ToList();
+            }
+            foreach (var Ingre in Recipe)
+            {
+                Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
+            }
         }
+
     }
 }
