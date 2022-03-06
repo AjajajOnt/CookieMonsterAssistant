@@ -25,6 +25,11 @@
 
                 if (row.StartsWith("Ingredients:"))
                 {
+                    return new Ingre()
+                    {
+
+                        Description = columns[0]
+                    };
                 }
                 else
                 {

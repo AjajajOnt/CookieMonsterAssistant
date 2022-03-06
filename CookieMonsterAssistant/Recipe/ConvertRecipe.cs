@@ -35,7 +35,7 @@ namespace CookieMonsterAssistant.Recipe
 
             foreach (var Ingre in Recipe)
             {
-                if (Ingre.Amount > 0 && Ingre.Amount < 420)
+                if ((Ingre.Amount > 0 && Ingre.Amount < 420) || Ingre.Description.StartsWith("Ingredients:"))
                 {
                     Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
                 }
