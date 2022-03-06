@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nc5J/TpsWLfRyBxMpsoOra0VuCxBHVYE/gazg6bmNYy/jgzXgEUr+W/kS2jfHRUvgFlxyXgbzSq/2UrcZ84Xtw==",
+  "dgSpecHash": "8euzPb/axKqcENpR7frJSk97lmgzQE+SHL4yLLAKeEDbSj6lQBaICR4F7teOqUnO3unuUmTAwaDE2kxlZY27jA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistant\\CookieMonsterAssistant.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,8 @@
     "C:\\Users\\DarkArt\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
     "C:\\Users\\DarkArt\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\DarkArt\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\DarkArt\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\DarkArt\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\DarkArt\\.nuget\\packages\\threenine.linqtocsv\\1.6.0\\threenine.linqtocsv.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

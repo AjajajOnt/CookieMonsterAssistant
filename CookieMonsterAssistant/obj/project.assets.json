@@ -279,6 +279,15 @@
             "rid": "win"
           }
         }
+      },
+      "Threenine.LinqToCsv/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/LINQtoCSV.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LINQtoCSV.dll": {}
+        }
       }
     }
   },
@@ -1017,11 +1026,24 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Threenine.LinqToCsv/1.6.0": {
+      "sha512": "13P/4as7uN39me1qZUmYCSphq4MdjUG90anak7CbNhOGh5tYPlFlDCBYnO0mFFdGFhVv+OoU7yA0vAnc9y8uDg==",
+      "type": "package",
+      "path": "threenine.linqtocsv/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LINQtoCSV.dll",
+        "threenine.linqtocsv.1.6.0.nupkg.sha512",
+        "threenine.linqtocsv.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EntityFramework >= 6.4.4"
+      "EntityFramework >= 6.4.4",
+      "Threenine.LinqToCsv >= 1.6.0"
     ]
   },
   "packageFolders": {
@@ -1071,6 +1093,10 @@
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
+          },
+          "Threenine.LinqToCsv": {
+            "target": "Package",
+            "version": "[1.6.0, )"
           }
         },
         "imports": [

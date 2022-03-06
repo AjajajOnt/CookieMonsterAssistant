@@ -34,3 +34,4 @@ C:\Users\DarkArt\source\repos\CookieMonsterAssistant\CookieMonsterAssistant\obj\
 C:\Users\DarkArt\source\repos\CookieMonsterAssistant\CookieMonsterAssistant\obj\Debug\net6.0\CookieMonsterAssistant.pdb
 C:\Users\DarkArt\source\repos\CookieMonsterAssistant\CookieMonsterAssistant\obj\Debug\net6.0\CookieMonsterAssistant.genruntimeconfig.cache
 C:\Users\DarkArt\source\repos\CookieMonsterAssistant\CookieMonsterAssistant\obj\Debug\net6.0\ref\CookieMonsterAssistant.dll
+C:\Users\DarkArt\source\repos\CookieMonsterAssistant\CookieMonsterAssistant\bin\Debug\net6.0\LINQtoCSV.dll
