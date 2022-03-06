@@ -19,15 +19,13 @@ namespace CookieMonsterAssistant.Ingrediens
         internal static Ingre ParseRow(string row)
         {
                 var columns = row.Split(',');
-            if (columns[1] == "cup")
-            {
-                columns[1] = "2,3 DL";
-            }
-
-
             Console.WriteLine(columns.Length);
             if (columns.Length == 3)
             {
+                if (columns[1].Trim() == "cups" || columns[1].Trim() == "cup")
+                {
+                    columns[1] += "2,3 DL";
+                }
                 return new Ingre()
                 {
                     Amount = (columns[0]),
@@ -39,7 +37,11 @@ namespace CookieMonsterAssistant.Ingrediens
             }
             else if (columns.Length == 4)
             {
-
+                if (columns[1].Trim() == "cups" || columns[1].Trim() == "cup")
+                {
+                    Console.WriteLine(columns[1]);
+                    columns[1] = "2,3 DL";
+                }
                 return new Ingre()
                 {
                     Amount = (columns[0]),
@@ -50,7 +52,7 @@ namespace CookieMonsterAssistant.Ingrediens
                 };
             
             }
-            Console.WriteLine(row);
+            
             return new Ingre();
         }
     }
