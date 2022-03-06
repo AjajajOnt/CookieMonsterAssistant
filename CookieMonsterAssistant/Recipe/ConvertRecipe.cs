@@ -12,6 +12,16 @@ namespace CookieMonsterAssistant.Recipe
 
         internal void RecipeConversion()
         {
+            List<Ingre> Recipe = ReadsCSVfile();
+            AsksForHowManyPortions(Recipe);
+            PrintsIngridients(Recipe);
+            PrintsInstructions(Recipe);
+            Console.WriteLine("This recpie is for " + HowMany * 2 + " people.");
+            Console.ReadKey();
+        }
+
+        private static List<Ingre> ReadsCSVfile()
+        {
             string Path = @"C:\Users\DarkArt\Desktop\Recipe.csv";
             var Recipe = ReadCSV(Path);
             List<Ingre> ReadCSV(string path)
@@ -21,6 +31,11 @@ namespace CookieMonsterAssistant.Recipe
                 .Select(Ingre.ParseRow).ToList();
             }
 
+            return Recipe;
+        }
+
+        private void AsksForHowManyPortions(List<Ingre> Recipe)
+        {
             Console.WriteLine("This recipie is for 2 people.");
             Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
             HowMany = int.Parse(Console.ReadLine());
@@ -32,7 +47,10 @@ namespace CookieMonsterAssistant.Recipe
             }
 
             Console.Clear();
+        }
 
+        private static void PrintsIngridients(List<Ingre> Recipe)
+        {
             foreach (var Ingre in Recipe)
             {
                 if ((Ingre.Amount > 0 && Ingre.Amount < 420) || Ingre.Description.StartsWith("Ingredients:"))
@@ -40,7 +58,10 @@ namespace CookieMonsterAssistant.Recipe
                     Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
                 }
             }
+        }
 
+        private static void PrintsInstructions(List<Ingre> Recipe)
+        {
             foreach (var Ingre in Recipe)
             {
                 if (Ingre.Amount >= 420)
@@ -48,8 +69,6 @@ namespace CookieMonsterAssistant.Recipe
                     Console.WriteLine(Ingre.Description);
                 }
             }
-            Console.WriteLine("This recpie is for " + HowMany * 2 + " people.");
-            Console.ReadKey();
         }
     }
 }
