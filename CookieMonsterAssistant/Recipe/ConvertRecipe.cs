@@ -10,16 +10,23 @@ namespace CookieMonsterAssistant.Recipe
         public bool End = false;
         public int HowMany = 1;
 
+
+        /// <summary>
+        /// Kör alla metoder i ordning.
+        /// </summary>
         internal void RecipeConversion()
         {
             List<Ingre> Recipe = ReadsCSVfile();
-            AsksForHowManyPortions(Recipe);
+            AsksForHowManyPortionsAndMultiplies(Recipe);
             PrintsIngridients(Recipe);
             PrintsInstructions(Recipe);
             Console.WriteLine("This recpie is for " + HowMany * 2 + " people.");
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Läser CSV filen.
+        /// </summary>
+        /// <returns></returns>
         private static List<Ingre> ReadsCSVfile()
         {
             string Path = @"C:\Users\DarkArt\Desktop\Recipe.csv";
@@ -33,8 +40,11 @@ namespace CookieMonsterAssistant.Recipe
 
             return Recipe;
         }
-
-        private void AsksForHowManyPortions(List<Ingre> Recipe)
+        /// <summary>
+        /// Multiplicerar receptet till antalet du vill ha.
+        /// </summary>
+        /// <param name="Recipe"></param>
+        private void AsksForHowManyPortionsAndMultiplies(List<Ingre> Recipe)
         {
             Console.WriteLine("This recipie is for 2 people.");
             Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
@@ -48,7 +58,10 @@ namespace CookieMonsterAssistant.Recipe
 
             Console.Clear();
         }
-
+        /// <summary>
+        /// Skriver ut ingridienser, mått o sånt.
+        /// </summary>
+        /// <param name="Recipe"></param>
         private static void PrintsIngridients(List<Ingre> Recipe)
         {
             foreach (var Ingre in Recipe)
@@ -60,6 +73,10 @@ namespace CookieMonsterAssistant.Recipe
             }
         }
 
+        /// <summary>
+        /// Skriver ut instruktioner.
+        /// </summary>
+        /// <param name="Recipe"></param>
         private static void PrintsInstructions(List<Ingre> Recipe)
         {
             foreach (var Ingre in Recipe)
