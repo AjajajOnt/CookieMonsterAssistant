@@ -10,8 +10,13 @@ namespace CookieMonsterAssistant.Recipe
 {
     internal class ConvertRecipe
     {
+        public bool Directions = false;
+        public bool Ingridients = false;
+        public bool End = false;
+        public int HowMany = 1;
         internal void RecipeConversion()
         {
+            
             string Path = @"C:\Users\DarkArt\Desktop\Recipe.csv";
             var Recipe = ReadCSV(Path);           
             List<Ingre> ReadCSV(string path)
@@ -21,27 +26,16 @@ namespace CookieMonsterAssistant.Recipe
                 .Where(row => row.Length > 0)
                 .Select(Ingre.ParseRow).ToList();
             }
-            foreach (var Ingre in Recipe)
-            {
-                Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
-            }
-        }
-        internal void RecipeConversionV()
-        {
-            string Path = @"C:\Users\DarkArt\Desktop\Recipe.csv";
-            var Recipe = ReadCSV(Path);
-            List<Ingre> ReadCSV(string path)
-            {
 
-                return File.ReadAllLines(path)
-                .Where(row => row.Length > 0)
-                .Select(Ingre.ParseRow).ToList();
-            }
+            Console.WriteLine("This recipie is for 2 people.");
+            Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
+            HowMany = int.Parse(Console.ReadLine());
             foreach (var Ingre in Recipe)
             {
-                Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
+                Console.WriteLine(Ingre.Amount * HowMany + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
             }
         }
+
 
     }
 }

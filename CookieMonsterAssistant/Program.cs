@@ -3,6 +3,6 @@ using CookieMonsterAssistant.Ingrediens;
 using CookieMonsterAssistant.Recipe;
 
 ConvertRecipe Start = new ConvertRecipe();
-Start.RecipeConversionV();
-Console.ReadKey();
+Start.RecipeConversion();
+
 

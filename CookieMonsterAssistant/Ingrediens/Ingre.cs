@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CookieMonsterAssistant.Ingrediens
 {
+
     public class Ingre
     {
         public decimal Amount { get; set; }
@@ -16,37 +17,37 @@ namespace CookieMonsterAssistant.Ingrediens
         public string Ingredient { get; set; }
         public string Description { get; set; }
 
+        public static bool Directions = false;
+        public static bool Ingridients = false;
+        public static bool End = false;
 
-        bool Directions = false;
-        bool Ingridients = false;
-        bool End = false;
+
+
+
 
         internal static Ingre ParseRow(string row)
         {
-            bool Directions = false;
-            if (Directions == true || row.Contains("Directions:"))
-            {
-                Directions = true;
-                return ConvertIngri(row);
-
-            }
-            return ConvertIngri(row);
-        }
-
-        private static Ingre ConvertIngri(string row)
-        {
-            if (true)
-            {
-
             
+
             var columns = row.Split(',');
-            if (columns.Length == 3 Directions == true)
+
+            if ((columns.Length == 3 && Ingridients == true) || row.StartsWith("Ingredients:"))
             {
-                ThreeFourths(columns);
-                OneAndaHalf(columns);
-                TwoAndTwoThirds(columns);
-                OneAndaFourth(columns);
-                return new Ingre()
+                Ingridients = true;
+                End = false;
+                Directions = false;
+
+
+                if (row.StartsWith("Ingredients:"))
+                {
+                    Console.WriteLine((columns[0]));
+                }
+
+                else
+                    {
+
+                    ConvertMeasurementsAndAmounts(columns);
+                    return new Ingre()
                 {
                     Amount = decimal.Parse((columns[0])),
                     Measure = columns[1],
@@ -54,13 +55,19 @@ namespace CookieMonsterAssistant.Ingrediens
                     Description = ""
 
                 };
+                    }
+                
+
             }
-            else if (columns.Length == 4)
+
+
+
+            else if ((columns.Length == 4 && Ingridients == true) || row.StartsWith("Ingredients:") )
             {
-                ThreeFourths(columns);
-                OneAndaHalf(columns);
-                TwoAndTwoThirds(columns);
-                OneAndaFourth(columns);
+                Ingridients = true;
+                End = false;
+                Directions = false;
+                ConvertMeasurementsAndAmounts(columns);
                 return new Ingre()
                 {
                     Amount = decimal.Parse((columns[0])),
@@ -71,15 +78,51 @@ namespace CookieMonsterAssistant.Ingrediens
                 };
 
             }
-            else
+            else if (row.StartsWith("Directions:") || Directions == true)
             {
+                    Directions = true;
+                    Ingridients = false;
+                    End = false;
                 Console.WriteLine(row);
             }
             return new Ingre();
+            
+            }
+
+        private static void ConvertMeasurementsAndAmounts(string[] columns)
+        {
+            ThreeFourths(columns);
+            OneAndaHalf(columns);
+            TwoAndTwoThirds(columns);
+            OneAndaFourth(columns);
+            CupsToDeci(columns);
+            TeaspoonEquiv(columns);
+            TwelveOunces(columns);
+        }
+
+        private static void TwelveOunces(string[] columns)
+        {
+            if (columns[1].ToLower().Contains(" package (12 ounces)"))
+            {
+                columns[1] = "packet (340g)";
             }
         }
 
+        private static void TeaspoonEquiv(string[] columns)
+        {
+            if (columns[1].Trim().ToLower().Contains("teaspoon"))
+            {
+                columns[1] = "Tesked";
+            }
+        }
 
+        private static void CupsToDeci(string[] columns)
+        {
+            if (columns[1].Contains("cups") || columns[1].Contains("cup"))
+            {
+                columns[1] = "DL";
+            }
+        }
 
         private static void ThreeFourths(string[] columns)
         {
@@ -119,6 +162,7 @@ namespace CookieMonsterAssistant.Ingrediens
                 columns[1] = "2,3 DL";
             }
         }
+
     }
 
 }
