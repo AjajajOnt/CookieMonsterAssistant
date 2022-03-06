@@ -40,7 +40,7 @@ namespace CookieMonsterAssistant.Ingrediens
 
                 if (row.StartsWith("Ingredients:"))
                 {
-                    Console.WriteLine((columns[0]));
+                    
                 }
 
                 else
@@ -83,7 +83,8 @@ namespace CookieMonsterAssistant.Ingrediens
                     Directions = true;
                     Ingridients = false;
                     End = false;
-                Console.WriteLine(row);
+                
+
             }
             return new Ingre();
             
@@ -152,14 +153,6 @@ namespace CookieMonsterAssistant.Ingrediens
             if (columns[0].Contains("1 1/4"))
             {
                 columns[0] = "1,25";
-            }
-        }
-
-        private static void CupsToDl(string[] columns)
-        {
-            if (columns[1].Trim() == "cups" || columns[1].Trim() == "cup")
-            {
-                columns[1] = "2,3 DL";
             }
         }
 

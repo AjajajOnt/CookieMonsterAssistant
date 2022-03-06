@@ -1,4 +1,5 @@
 ﻿using CookieMonsterAssistant.Ingrediens;
+using CookieMonsterAssistant.Recipe;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
@@ -30,10 +31,26 @@ namespace CookieMonsterAssistant.Recipe
             Console.WriteLine("This recipie is for 2 people.");
             Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
             HowMany = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < Recipe.Count; i++)
+
+            {
+                Recipe[i].Amount *= HowMany;
+
+            }
+
+
             foreach (var Ingre in Recipe)
             {
-                Console.WriteLine(Ingre.Amount * HowMany + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
+                if (Ingre.Amount > 0)
+                {
+
+
+                    Console.WriteLine(Ingre.Amount + " " + Ingre.Measure + " " + Ingre.Ingredient + " " + Ingre.Description);
+                }
             }
+        
+
         }
 
 
