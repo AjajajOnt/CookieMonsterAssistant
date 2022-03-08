@@ -2,12 +2,12 @@
 {
     public class Ingre
     {
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
-        public string Measure { get; set; }
+        public string? Measure { get; set; }
 
-        public string Ingredient { get; set; }
-        public string Description { get; set; }
+        public string? Ingredient { get; set; }
+        public string? Description { get; set; }
 
         public static bool Directions = false;
         public static bool Ingridients = false;
@@ -41,7 +41,7 @@
                     ConvertMeasurementsAndAmounts(columns);
                     return new Ingre()
                     {
-                        Amount = decimal.Parse((columns[0])),
+                        Amount = float.Parse((columns[0])),
                         Measure = columns[1],
                         Ingredient = columns[2],
                         Description = ""
@@ -56,7 +56,7 @@
                 ConvertMeasurementsAndAmounts(columns);
                 return new Ingre()
                 {
-                    Amount = decimal.Parse((columns[0])),
+                    Amount = float.Parse((columns[0])),
                     Measure = columns[1],
                     Ingredient = columns[2],
                     Description = columns[3]
@@ -79,7 +79,7 @@
         /// Konverterar måtten till svenska mått.
         /// </summary>
         /// <param name="columns"></param>
-        private static void ConvertMeasurementsAndAmounts(string[] columns)
+        public static void ConvertMeasurementsAndAmounts(string[] columns)
         {
             ThreeFourths(columns);
             OneAndaHalf(columns);
@@ -93,7 +93,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void TwelveOunces(string[] columns)
+        public static void TwelveOunces(string[] columns)
         {
             if (columns[1].ToLower().Contains(" package (12 ounces)"))
             {
@@ -104,7 +104,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void TeaspoonEquiv(string[] columns)
+        public static void TeaspoonEquiv(string[] columns)
         {
             if (columns[1].Trim().ToLower().Contains("teaspoon"))
             {
@@ -115,7 +115,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void CupsToDeci(string[] columns)
+        public static void CupsToDeci(string[] columns)
         {
             if (columns[1].Contains("cups") || columns[1].Contains("cup"))
             {
@@ -126,7 +126,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void ThreeFourths(string[] columns)
+        public static void ThreeFourths(string[] columns)
         {
             if (columns[0].Contains("3/4"))
             {
@@ -137,7 +137,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void OneAndaHalf(string[] columns)
+        public static void OneAndaHalf(string[] columns)
         {
             if (columns[0].Contains("1 1/2"))
             {
@@ -148,7 +148,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void TwoAndTwoThirds(string[] columns)
+        public static void TwoAndTwoThirds(string[] columns)
         {
             if (columns[0].Contains("2 2/3"))
             {
@@ -159,7 +159,7 @@
         /// Konverterar mått
         /// </summary>
         /// <param name="columns"></param>
-        private static void OneAndaFourth(string[] columns)
+        public static void OneAndaFourth(string[] columns)
         {
             if (columns[0].Contains("1 1/4"))
             {

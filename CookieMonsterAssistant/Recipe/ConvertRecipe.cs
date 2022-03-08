@@ -3,11 +3,8 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace CookieMonsterAssistant.Recipe
 {
-    internal class ConvertRecipe
+    public class ConvertRecipe
     {
-        public bool Directions = false;
-        public bool Ingridients = false;
-        public bool End = false;
         public int HowMany = 1;
 
 
@@ -44,7 +41,7 @@ namespace CookieMonsterAssistant.Recipe
         /// Multiplicerar receptet till antalet du vill ha.
         /// </summary>
         /// <param name="Recipe"></param>
-        private void AsksForHowManyPortionsAndMultiplies(List<Ingre> Recipe)
+        public void AsksForHowManyPortionsAndMultiplies(List<Ingre> Recipe)
         {
             Console.WriteLine("This recipie is for 2 people.");
             Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
@@ -62,7 +59,7 @@ namespace CookieMonsterAssistant.Recipe
         /// Skriver ut ingridienser, mått o sånt.
         /// </summary>
         /// <param name="Recipe"></param>
-        private static void PrintsIngridients(List<Ingre> Recipe)
+        public static void PrintsIngridients(List<Ingre> Recipe)
         {
             foreach (var Ingre in Recipe)
             {
