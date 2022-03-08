@@ -1,21 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CookieMonsterAssistant.Recipe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CookieMonsterAssistant.Ingrediens;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CookieMonsterAssistant.Recipe.Tests
 {
     [TestClass()]
     public class ConvertRecipeTests
     {
-
         [TestMethod()]
         public void AsksForHowManyPortionsAndMultipliesTest()
         {
-            Assert.Fail();
+            int HowMany = 2;
+            Ingre NewIngre = new Ingre
+            {
+                Amount = 5
+            };
+
+            NewIngre.Amount *= HowMany;
+
+            Assert.AreEqual(10, NewIngre.Amount);
         }
     }
 }

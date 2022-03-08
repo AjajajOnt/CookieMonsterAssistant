@@ -7,7 +7,6 @@ namespace CookieMonsterAssistant.Recipe
     {
         public int HowMany = 1;
 
-
         /// <summary>
         /// Kör alla metoder i ordning.
         /// </summary>
@@ -17,9 +16,11 @@ namespace CookieMonsterAssistant.Recipe
             AsksForHowManyPortionsAndMultiplies(Recipe);
             PrintsIngridients(Recipe);
             PrintsInstructions(Recipe);
+            Console.WriteLine();
             Console.WriteLine("This recpie is for " + HowMany * 2 + " people.");
             Console.ReadKey();
         }
+
         /// <summary>
         /// Läser CSV filen.
         /// </summary>
@@ -37,6 +38,7 @@ namespace CookieMonsterAssistant.Recipe
 
             return Recipe;
         }
+
         /// <summary>
         /// Multiplicerar receptet till antalet du vill ha.
         /// </summary>
@@ -45,7 +47,14 @@ namespace CookieMonsterAssistant.Recipe
         {
             Console.WriteLine("This recipie is for 2 people.");
             Console.WriteLine("Enter multiplication factor for the recipie. Standard is 1.");
-            HowMany = int.Parse(Console.ReadLine());
+            try
+            {
+                HowMany = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                HowMany = 1;
+            }
 
             for (int i = 0; i < Recipe.Count; i++)
 
@@ -55,6 +64,7 @@ namespace CookieMonsterAssistant.Recipe
 
             Console.Clear();
         }
+
         /// <summary>
         /// Skriver ut ingridienser, mått o sånt.
         /// </summary>
@@ -78,7 +88,7 @@ namespace CookieMonsterAssistant.Recipe
         {
             foreach (var Ingre in Recipe)
             {
-                if (Ingre.Amount >= 420)
+                if (Ingre.Amount >= 420 && !Ingre.Description.Contains("End:"))
                 {
                     Console.WriteLine(Ingre.Description);
                 }

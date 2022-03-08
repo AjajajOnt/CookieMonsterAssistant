@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CookieMonsterAssistant.Ingrediens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CookieMonsterAssistant.Ingrediens.Tests
 {
@@ -14,7 +8,6 @@ namespace CookieMonsterAssistant.Ingrediens.Tests
         [TestMethod()]
         public void OneAndaFourthTest()
         {
-
             string columns = "1 1/4";
 
             if (columns == "1 1/4")
@@ -22,13 +15,8 @@ namespace CookieMonsterAssistant.Ingrediens.Tests
                 columns = "1.25";
             }
 
-
             Assert.AreEqual("1.25", columns);
-
-
-
         }
-
 
         [TestMethod()]
         public void TwelveOuncesTest()
@@ -39,7 +27,6 @@ namespace CookieMonsterAssistant.Ingrediens.Tests
             {
                 columns = "packet (340g)";
             }
-
 
             Assert.AreEqual("packet (340g)", columns);
         }
@@ -99,7 +86,5 @@ namespace CookieMonsterAssistant.Ingrediens.Tests
             }
             Assert.AreEqual("2,66", columns);
         }
-
-
     }
 }

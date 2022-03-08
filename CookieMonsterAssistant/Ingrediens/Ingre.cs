@@ -1,6 +1,8 @@
 ﻿namespace CookieMonsterAssistant.Ingrediens
 {
-    public class Ingre
+    public class
+
+        Ingre
     {
         public float Amount { get; set; }
 
@@ -32,7 +34,6 @@
                 {
                     return new Ingre()
                     {
-
                         Description = columns[0]
                     };
                 }
@@ -75,6 +76,7 @@
             }
             return new Ingre();
         }
+
         /// <summary>
         /// Konverterar måtten till svenska mått.
         /// </summary>
@@ -89,6 +91,7 @@
             TeaspoonEquiv(columns);
             TwelveOunces(columns);
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -100,6 +103,7 @@
                 columns[1] = "packet (340g)";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -111,6 +115,7 @@
                 columns[1] = "Tesked";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -122,6 +127,7 @@
                 columns[1] = "DL";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -133,6 +139,7 @@
                 columns[0] = "0,75";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -144,6 +151,7 @@
                 columns[0] = "1,50";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
@@ -155,6 +163,7 @@
                 columns[0] = "2,66";
             }
         }
+
         /// <summary>
         /// Konverterar mått
         /// </summary>
