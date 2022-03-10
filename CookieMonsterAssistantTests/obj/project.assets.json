@@ -7154,9 +7154,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistantTests\\CookieMonsterAssistantTests.csproj",
-      "projectName": "CookieMonsterAssistantTests",
-      "projectPath": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistantTests\\CookieMonsterAssistantTests.csproj",
+      "projectUniqueName": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistantTests\\CookieMonsterAssistant.Tests.csproj",
+      "projectName": "CookieMonsterAssistant.Tests",
+      "projectPath": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistantTests\\CookieMonsterAssistant.Tests.csproj",
       "packagesPath": "C:\\Users\\DarkArt\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\DarkArt\\source\\repos\\CookieMonsterAssistant\\CookieMonsterAssistantTests\\obj\\",
       "projectStyle": "PackageReference",

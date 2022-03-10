@@ -8,39 +8,36 @@ namespace CookieMonsterAssistant.Ingrediens.Tests
         [TestMethod()]
         public void OneAndaFourthTest()
         {
-            string columns = "1 1/4";
+            string[] columns = new string[3];
+            columns[0] =  "1 1/4" ;
+            Ingre.OneAndaFourth(columns);
+            Assert.AreEqual("1,25", columns[0]);
 
-            if (columns == "1 1/4")
-            {
-                columns = "1.25";
-            }
 
-            Assert.AreEqual("1.25", columns);
         }
 
         [TestMethod()]
         public void TwelveOuncesTest()
         {
-            string columns = " package (12 ounces)";
 
-            if (columns.ToLower().Contains(" package (12 ounces)"))
-            {
-                columns = "packet (340g)";
-            }
 
-            Assert.AreEqual("packet (340g)", columns);
+            string[] columns = new string[3];
+            columns[1] = " package (12 ounces)";
+            Ingre.TwelveOunces(columns);
+            Assert.AreEqual("packet (340g)", columns[1]);
+
         }
 
         [TestMethod()]
         public void TeaspoonEquivTest()
         {
-            string columns = "teaspoon";
 
-            if (columns.Trim().ToLower().Contains("teaspoon"))
-            {
-                columns = "Tesked";
-            }
-            Assert.AreEqual("Tesked", columns);
+
+            string[] columns = new string[3];
+            columns[1] = "teaspoon";
+            Ingre.TeaspoonEquiv(columns);
+            Assert.AreEqual("Tesked", columns[1]);
+
         }
 
         [TestMethod()]
